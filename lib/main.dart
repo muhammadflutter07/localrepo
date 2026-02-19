@@ -1,11 +1,3 @@
-// import 'package:appbar/practice.dart';
-// import 'package:flutter/material.dart';
-
-// void main() {
-//   runApp(
-//     MaterialApp(debugShowCheckedModeBanner: false, home: PracticeScreen()),
-//   );
-// }
 import 'dart:io';
 
 void main() {
