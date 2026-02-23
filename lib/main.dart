@@ -1,22 +1,38 @@
 import 'dart:io';
 
 void main() {
-  String correctpassword = "1234";
-  String userinput = "";
-  int attempts = 0;
-  while (userinput != correctpassword && attempts < 3) {
-    print('Enter password');
-    userinput = stdin.readLineSync()!;
+  int choice = 2;
 
-    if (userinput != correctpassword) {
-      attempts++;
-      print('Wrong password');
-    }
+  switch (choice) {
+    case 1:
+      print('Monday');
+      break;
+
+    case 2:
+      print('Tuesday');
+      break;
+
+    case 3:
+      print('Wednesday');
+      break;
+
+    case 4:
+      print('Thursday');
+      break;
+
+    case 5:
+      print('Friday');
+      break;
+
+    case 6:
+      print('Saturday');
+      break;
+
+    case 7:
+      print('Sunday');
+      break;
+
+    default:
+      print('Invalid Day');
   }
-  if (userinput == correctpassword) {
-    print('successfull');
-  } else {
-    print('Account locked');
-  }
-  ;
 }
