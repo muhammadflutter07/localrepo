@@ -1,7 +1,6 @@
 void main() {
-  var a = 100;
-  var b = 200;
-
-  print(a is int);
-  print(b is! int);
+  String numberstr = "200";
+  int number = int.parse(numberstr);
+  int result = number + 50;
+  print(result);
 }
