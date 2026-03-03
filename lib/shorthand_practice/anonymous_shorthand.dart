@@ -1,5 +1,3 @@
-import 'dart:io';
-
 void main() {
   greet("muhammad");
   print(square(6));
