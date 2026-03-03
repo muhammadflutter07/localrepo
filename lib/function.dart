@@ -7,6 +7,7 @@ void main() {
   var names = [];
   names.add("khan");
   names.add("boss");
+  names.add("khani");
   names.addAll(listNames);
   names.insert(3, 100);
 
