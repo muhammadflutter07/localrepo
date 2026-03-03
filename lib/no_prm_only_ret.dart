@@ -1,8 +1,8 @@
 int age() {
-  return 18;
+  return 20;
 }
 
 void main() {
   int myage = age();
-  print(myage);
+  print("I am $myage years old");
 }
