@@ -1,0 +1,11 @@
+import 'package:appbar/shorthand_practice/anonymous_shorthand.dart';
+
+void main() {
+  greetuser("faiz", 13);
+  greetuser("faiz");
+  greetuser();
+}
+
+void greetuser([String? name = "Guest", int? no]) {
+  print("Hello $name, your room No $no");
+}
