@@ -1,5 +1,3 @@
-import 'package:appbar/shorthand_practice/anonymous_shorthand.dart';
-
 void main() {
   greetuser("faiz", 13);
   greetuser("faiz");
