@@ -3,4 +3,5 @@ void main() {
 
   print(fruits[0]);
   print(fruits[3]);
+  print(fruits.contains("mango"));
 }
