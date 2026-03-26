@@ -9,5 +9,7 @@ void main() {
     print(x);
   } catch (e) {
     print('exception:$e');
+  } finally {
+    print('finally clause..');
   }
 }
