@@ -7,16 +7,17 @@ void main() {
   student.studentID = 82347;
   student.name = 'Reacher';
 
+  student1.name = 'khan';
+  student1.age = 17;
+  student1.grade = 'A';
+  student1.studentID = 83726;
+
   student.displayinfo();
   student.updateGrade('A+');
   student.updatename('Jack Reacher');
 
-  student.name = 'khan';
-  student.age = 17;
-  student.grade = 'A';
-  student.studentID = 83726;
-
   student1.displayinfo();
+  student1.updateGrade('B');
 }
 
 class Student {
