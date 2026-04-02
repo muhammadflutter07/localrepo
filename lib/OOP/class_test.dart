@@ -1,5 +1,15 @@
 void main() {
-  Student student = Student('khan', -2);
+  List<Student> students = [
+    Student('john', 20),
+    Student('doe', 50),
+    Student('alice', 75),
+    Student('bob', 85),
+  ];
+
+  students.forEach((element) {
+    print('name ${element.name} marks ${element.marks}');
+  });
+  Student student = Student('khan', 87);
   student.detail();
   student.checkresult();
   student.checkgrade();
