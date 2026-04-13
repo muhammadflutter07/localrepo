@@ -1,6 +1,15 @@
+import 'package:appbar/parameters/screen.dart';
+import 'package:flutter/material.dart';
+
 void main() {
-  String numberstr = "200";
-  int number = int.parse(numberstr);
-  int result = number + 50;
-  print(result);
+  runApp(const Myapp());
+}
+
+class Myapp extends StatelessWidget {
+  const Myapp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Screen());
+  }
 }
