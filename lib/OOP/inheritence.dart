@@ -1,10 +1,10 @@
 class BankAccount {
-
   int _accountnumber;
   int _balance;
 
   BankAccount(this._accountnumber, this._balance);
 
+  int get accountnumber => _accountnumber;
   int get balance => _balance;
 
   void deposit(int amount) {
@@ -13,7 +13,7 @@ class BankAccount {
       print('New deposit: $amount, New balance: $_balance');
     }
   }
-  
+
   void withdraw(int amount) {
     if (amount > 0 && amount <= _balance) {
       _balance = _balance - amount;
@@ -21,7 +21,6 @@ class BankAccount {
     }
   }
 }
-
 
 class SavingAccount extends BankAccount {
   double _interestRate;
@@ -36,9 +35,9 @@ class SavingAccount extends BankAccount {
   }
 }
 
-
 void main() {
-  SavingAccount account = SavingAccount(12345, 1000, 5.0);
+  SavingAccount account = SavingAccount(17263587, 1000, 5.0);
+  print('Account number: ${account.accountnumber}');
   print('Initial balance: ${account.balance}');
 
   account.deposit(500);
