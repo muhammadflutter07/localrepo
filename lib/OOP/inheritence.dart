@@ -10,15 +10,23 @@ class BankAccount {
   void deposit(int amount) {
     if (amount > 0) {
       _balance = _balance + amount;
-      print('New deposit: $amount, New balance: $_balance');
+      print('New deposit: $amount, New balance: $balance');
+    } else {
+      print("Insufficient balance");
     }
   }
 
   void withdraw(int amount) {
     if (amount > 0 && amount <= _balance) {
       _balance = _balance - amount;
-      print('New withdraw: $amount, New balance: $_balance');
+      print('New withdraw: $amount, New balance: $balance');
+    } else {
+      print("Insufficient balance");
     }
+  }
+
+  void updateBalance(int amount) {
+    _balance += amount;
   }
 }
 
@@ -30,17 +38,47 @@ class SavingAccount extends BankAccount {
 
   void calculateInterest() {
     double interest = balance * _interestRate / 100;
-    _balance += interest.toInt();
+    deposit(interest.toInt());
     print('Interest: $interest, New balance: $_balance');
   }
 }
 
+class CurrentAccount extends BankAccount {
+  int overdraftLimit;
+
+  CurrentAccount(int accNo, int balance, this.overdraftLimit)
+    : super(accNo, balance);
+
+  @override
+  void withdraw(int amount) {
+    if (amount <= balance) {
+      super.withdraw(amount);
+    } else if (amount <= balance + overdraftLimit) {
+      double extraUsed = (amount - balance).toDouble();
+      print('using overdraft: $extraUsed');
+
+      _balance -= amount;
+      print("Withdrawn with overdraft | New Balance: $balance");
+    } else {
+      print("Overdraft limit reached ");
+    }
+  }
+}
+
 void main() {
-  SavingAccount account = SavingAccount(17263587, 1000, 5.0);
-  print('Account number: ${account.accountnumber}');
-  print('Initial balance: ${account.balance}');
+  print('\n=== Saving account ===');
+  SavingAccount account = SavingAccount(17263987, 1000, 5.0);
 
   account.deposit(500);
-  account.withdraw(200);
+  account.withdraw(300);
   account.calculateInterest();
+
+  print("\n=== Current Account ===");
+  CurrentAccount current = CurrentAccount(202, 1000, 5000);
+
+  current.deposit(1000);
+  current.withdraw(2500);
+  current.withdraw(6000);
+
+  // current.checkBalance();
 }
