@@ -17,7 +17,7 @@ class BankAccount {
   }
 
   void withdraw(int amount) {
-    if (amount > 0 && amount <= _balance) {
+    if (amount > 0 && amount <= balance) {
       _balance = _balance - amount;
       print('New withdraw: $amount, New balance: $balance');
     } else {
