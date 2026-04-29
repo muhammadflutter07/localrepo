@@ -14,4 +14,5 @@ class Marks {
 
 void main() {
   Marks marks = Marks();
+  print(marks);
 }
