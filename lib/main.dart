@@ -1,4 +1,4 @@
-import 'package:appbar/widgets/common_widgets.dart';
+import 'package:appbar/widgets/otp_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,6 +10,6 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: MyScreen());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: MyAppScreen());
   }
 }
