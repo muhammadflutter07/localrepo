@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
+import "dart:async";
 
 class MyAppScreen extends StatelessWidget {
   const MyAppScreen({super.key});
@@ -18,6 +19,33 @@ class MyScreen extends StatefulWidget {
 }
 
 class _MyScreenState extends State<MyScreen> {
+  int _seconds = 150; 
+  Timer? _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _startTimer();
+  }
+
+  void _startTimer() {
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      if (_seconds > 0) {
+        setState(() {
+          _seconds--;
+        });
+      } else {
+        _timer?.cancel();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,9 +131,15 @@ class _MyScreenState extends State<MyScreen> {
 
               SizedBox(height: 16),
 
+              // Text(
+              //   "02:30s",
+              //   style: TextStyle(color: Colors.black54, fontSize: 14),
+              // ),
               Text(
-                "02:30s",
-                style: TextStyle(color: Colors.black54, fontSize: 14),
+                _seconds > 0
+                    ? '${(_seconds ~/ 60).toString().padLeft(2, '0')}:${(_seconds % 60).toString().padLeft(2, '0')}s'
+                    : '00:00s',
+                style: TextStyle(color: Colors.grey, fontSize: 14),
               ),
               SizedBox(height: 32),
 
@@ -132,20 +166,45 @@ class _MyScreenState extends State<MyScreen> {
               ),
               SizedBox(height: 20),
 
-              RichText(
-                text: TextSpan(
-                  text: "Didn't receive the code",
-                  style: TextStyle(fontSize: 14, color: Colors.grey),
-                  children: [
-                    WidgetSpan(child: SizedBox(width: 5)),
-                    TextSpan(
-                      text: "Resend",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
+              // RichText(
+              //   text: TextSpan(
+              //     text: "Didn't receive the code",
+              //     style: TextStyle(fontSize: 14, color: Colors.grey),
+              //     children: [
+              //       WidgetSpan(child: SizedBox(width: 5)),
+              //       TextSpan(
+              //         text: "Resend",
+              //         style: TextStyle(
+              //           color: Colors.blue,
+              //           fontWeight: FontWeight.bold,
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
+              GestureDetector(
+                onTap: _seconds == 0
+                    ? () {
+                        setState(() {
+                          _seconds = 150;
+                        });
+                        _startTimer();
+                      }
+                    : null,
+                child: RichText(
+                  text: TextSpan(
+                    text: "Didn't receive the code? ",
+                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                    children: [
+                      TextSpan(
+                        text: 'Resend',
+                        style: TextStyle(
+                          color: _seconds == 0 ? Colors.blue : Colors.grey,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
