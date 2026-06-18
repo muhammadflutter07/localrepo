@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 
-class MyAppScreen extends StatefulWidget {
+class MyAppScreen extends StatelessWidget {
   const MyAppScreen({super.key});
 
-  @override
-  State<MyAppScreen> createState() => _MyAppScreenState();
-}
-
-class _MyAppScreenState extends State<MyAppScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
