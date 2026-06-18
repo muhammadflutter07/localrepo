@@ -19,7 +19,7 @@ class MyScreen extends StatefulWidget {
 }
 
 class _MyScreenState extends State<MyScreen> {
-  int _seconds = 150; 
+  int _seconds = 150;
   Timer? _timer;
 
   @override
@@ -166,22 +166,6 @@ class _MyScreenState extends State<MyScreen> {
               ),
               SizedBox(height: 20),
 
-              // RichText(
-              //   text: TextSpan(
-              //     text: "Didn't receive the code",
-              //     style: TextStyle(fontSize: 14, color: Colors.grey),
-              //     children: [
-              //       WidgetSpan(child: SizedBox(width: 5)),
-              //       TextSpan(
-              //         text: "Resend",
-              //         style: TextStyle(
-              //           color: Colors.blue,
-              //           fontWeight: FontWeight.bold,
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
               GestureDetector(
                 onTap: _seconds == 0
                     ? () {
