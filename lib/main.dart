@@ -1,4 +1,4 @@
-import 'package:appbar/widgets/welcome_screen.dart';
+import 'package:appbar/widgets/create_account_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class Myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: WelcomeScreen(),
+      home: CreateAccount(),
     );
   }
 }
