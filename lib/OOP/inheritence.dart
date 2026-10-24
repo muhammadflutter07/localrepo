@@ -1,5 +1,5 @@
 class BankAccount {
-  int _accountnumber;
+  final int _accountnumber;
   int _balance;
 
   BankAccount(this._accountnumber, this._balance);
@@ -31,10 +31,9 @@ class BankAccount {
 }
 
 class SavingAccount extends BankAccount {
-  double _interestRate;
+  final double _interestRate;
 
-  SavingAccount(int accountnumber, int balance, this._interestRate)
-    : super(accountnumber, balance);
+  SavingAccount(super.accountnumber, super.balance, this._interestRate);
 
   void calculateInterest() {
     double interest = balance * _interestRate / 100;
@@ -46,8 +45,7 @@ class SavingAccount extends BankAccount {
 class CurrentAccount extends BankAccount {
   int overdraftLimit;
 
-  CurrentAccount(int accNo, int balance, this.overdraftLimit)
-    : super(accNo, balance);
+  CurrentAccount(super.accNo, super.balance, this.overdraftLimit);
 
   @override
   void withdraw(int amount) {

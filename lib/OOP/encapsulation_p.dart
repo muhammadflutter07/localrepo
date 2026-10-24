@@ -5,7 +5,7 @@ class Bankaccount {
 
   int get balance => _balance;
 
-  void set balance(int value) {
+  set balance(int value) {
     if (value < 0) {
       print('invalid amount: rejected');
     } else {

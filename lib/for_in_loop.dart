@@ -7,5 +7,7 @@ void main() {
     print(num * 9);
   }
 
-  for (var fruitsname in fruits) print("I like $fruitsname");
+  for (var fruitsname in fruits) {
+    print("I like $fruitsname");
+  }
 }

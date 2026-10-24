@@ -18,7 +18,7 @@ class SmartDevice {
   String get deviceId => _deviceId;
 
   void connectdevice(SmartDevice device) {
-    if (this._isOn && device._isOn) {
+    if (_isOn && device._isOn) {
       print('$_deviceId connected to ${device._deviceId}');
     } else {
       print('Connection failed (both device must be on)');
@@ -29,7 +29,7 @@ class SmartDevice {
 class SmartPhone extends SmartDevice {
   int _batterylevel = 100;
 
-  SmartPhone(String deviceId) : super(deviceId);
+  SmartPhone(super.deviceId);
 
   void charge(int amount) {
     _batterylevel += amount;
@@ -55,7 +55,7 @@ class SmartPhone extends SmartDevice {
 class smartwatch extends SmartDevice {
   int _stepcount = 0;
 
-  smartwatch(String deviceId) : super(deviceId);
+  smartwatch(super.deviceId);
 
   void walk(int steps) {
     if (steps > 0) {

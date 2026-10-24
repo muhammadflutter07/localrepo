@@ -23,9 +23,9 @@ class Person {
   bool? isStudent;
 
   void introduce() {
-    print("my name is ${name}");
-    print("my father name  is ${fatherName}");
-    print("my age is ${age}");
-    print(' ${isStudent}');
+    print("my name is $name");
+    print("my father name  is $fatherName");
+    print("my age is $age");
+    print(' $isStudent');
   }
 }

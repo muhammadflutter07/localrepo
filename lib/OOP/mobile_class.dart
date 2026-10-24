@@ -12,7 +12,7 @@ class Mobile {
   int? price;
 
   void showprice() {
-    print('object brand is ${brand}');
-    print('object price is ${price}');
+    print('object brand is $brand');
+    print('object price is $price');
   }
 }
