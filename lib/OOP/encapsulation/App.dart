@@ -6,7 +6,7 @@ class Student {
 
   int get marks => _marks;
 
-  void set marks(int marks) {
+  set marks(int marks) {
     if (marks >= 0 && marks <= 100) {
       _marks = marks;
     } else {
@@ -26,6 +26,8 @@ class Student {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,6 +38,8 @@ class MyApp extends StatelessWidget {
 }
 
 class CounterScreen extends StatefulWidget {
+  const CounterScreen({super.key});
+
   @override
   State<CounterScreen> createState() => _CounterScreenState();
 }
@@ -49,6 +53,7 @@ class _CounterScreenState extends State<CounterScreen> {
     student.calculategrade();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Student Card"), centerTitle: true),

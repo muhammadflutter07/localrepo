@@ -6,9 +6,9 @@ void main() {
     Student('bob', 85),
   ];
 
-  students.forEach((element) {
+  for (var element in students) {
     print('name ${element.name} marks ${element.marks}');
-  });
+  }
   Student student = Student('khan', 87);
   student.detail();
   student.checkresult();

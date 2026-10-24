@@ -36,6 +36,8 @@ class StudentModel {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -46,6 +48,8 @@ class MyApp extends StatelessWidget {
 }
 
 class CounterScreen extends StatefulWidget {
+  const CounterScreen({super.key});
+
   @override
   State<CounterScreen> createState() => _CounterScreenState();
 }
@@ -191,10 +195,10 @@ class _CounterScreenState extends State<CounterScreen> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: submitresult,
-                  child: Text("Submit"),
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(double.infinity, 50),
                   ),
+                  child: Text("Submit"),
                 ),
               ),
               SizedBox(height: 10),
@@ -240,7 +244,7 @@ class _CounterScreenState extends State<CounterScreen> {
                         SizedBox(height: 20),
 
                         Text(
-                          "${student.grade}",
+                          student.grade,
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 30, // <-- bigger font
@@ -263,6 +267,8 @@ class _CounterScreenState extends State<CounterScreen> {
 }
 
 class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
